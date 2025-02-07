@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "name": "Ubuntu",
+            "includePath": [
+                "/home/mperrone/cyrus-imapd/**",
+                "/home/mperrone/cyrus-imapd/imap/**",
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/lib/**",
+                "/home/mperrone/cyrus-imapd/lib/**",
+                "/usr/include/mariadb/**",
+                "/usr/include/mysql/**",
+                "/usr/local/include/cyrus/**",
+                "/usr/include/**",
+	            "/usr/local/include/**"	
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}
