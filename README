@@ -15,7 +15,7 @@ The SQL configuration is as documented on CYRUS SASL web pages.
 I discovered that 'sql' was not available as a mechanism when building the original code.
 Additionally, there was no Argon2 support built in. 
 As labeled I started with Cyrus-SASL-2.2.28 release version.
-I had to make some minor changes to get some origion sources to work:
+I had to make some minor changes to get some original sources to work:
 There is a macro that is common in other Cyrus projects, assertionfailed(), that was
 breaking as undefined (Ubuntu 22.04 LTS). 
 Other than that, everything different from Cyrus is an addition. SQL is added as
