@@ -1,1 +1,23 @@
 Look at README.md
+
+This is a fork of Cyrus-Sasl 
+It builds into the main daemon (not a library plugin) the ability to use 'sql' as a mechanism.
+Currently, it has hard coded a query that will work on most modern postfixadmin 
+based virtual email systems.
+If you started out with dovecot and postfixadmin, and want to move cyrus IMAPD, 
+you need a SASL that can work with a postfixadmin database. 
+SASL did not appear to have any support for Argon2 password hashes. 
+This fork requires additional libaries not required by Cyrus SASL. 
+You will need mariadb or mysql development libraries, and the Argon2 development libraries. 
+Security Problem: This version gets the database login informaion from a configuration file.
+You must keep that file secure or adopt an encryption strategy. 
+The SQL configuration is as documented on CYRUS SASL web pages.
+I discovered that 'sql' was not available as a mechanism when building the original code.
+Additionally, there was no Argon2 support built in. 
+As labeled I started with Cyrus-SASL-2.2.28 release version.
+I had to make some minor changes to get some origion sources to work:
+There is a macro that is common in other Cyrus projects, assertionfailed(), that was
+breaking as undefined (Ubuntu 22.04 LTS). 
+Other than that, everything different from Cyrus is an addition. SQL is added as
+mechanims, with initialization and verification call backs in the new files added.
+Must link with -largon2 and -lmysql or -lmariadb 
